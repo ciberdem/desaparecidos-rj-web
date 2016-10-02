@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave', '~> 0.11.2'
 gem 'mini_magick', '~> 4.5.1'
 
+# Bootstrap style
+gem 'bootstrap', '~> 4.0.0.alpha4'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
