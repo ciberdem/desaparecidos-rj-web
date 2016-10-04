@@ -19,5 +19,12 @@ class HomeControllerTest < ActionController::TestCase
     get :index
     assert_response 200
     assert_includes @response.body, @current_user.email
+    assert_includes @response.body, 'Logout'
+  end
+
+  test '#failed_login' do
+    get :failed_login
+    assert_response 200
+    assert_includes @response.body, 'Voltar'
   end
 end

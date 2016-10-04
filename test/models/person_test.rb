@@ -27,7 +27,7 @@ class PersonTest < ActiveSupport::TestCase
     assert @person_with_attributes.valid?
   end
 
-  test '#photo_url' do
+  test '#photo_url default' do
     assert_equal '/images/person/defaul_photo.jpg', @person.photo_url
   end
 end
