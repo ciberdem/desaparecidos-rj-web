@@ -28,6 +28,6 @@ class PersonTest < ActiveSupport::TestCase
   end
 
   test '#photo_url default' do
-    assert_equal '/images/person/defaul_photo.jpg', @person.photo_url
+    assert_equal '/uploads/person/photo/default_photo.jpg', @person.photo_url
   end
 end

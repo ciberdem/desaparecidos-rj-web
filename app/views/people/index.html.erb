@@ -1,0 +1,10 @@
+<h1>Lista de desaparecidos</h1>
+
+<% @people.each do |person| %>
+  <%= person.name %>
+  <%= image_tag person.photo %>
+  <%= link_to 'Editar', editar_path(person.id) %>
+  <%= link_to 'Excluir',  people_path(person), data: { confirm: 'Está certo que deseja excluir esta pessoa?' }, method: :delete %>
+  <br />
+  <br />
+<% end %>

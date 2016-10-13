@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
-  get '/failed_login', to: 'home#failed_login'
-
   devise_for :users
+
+  get  '/falha_login',   to: 'home#failed_login'
+  get  '/cadastrar',     to: 'people#new'
+  get  '/desaparecidos', to: 'people#index'
+  get  '/editar',        to: 'people#edit'      
+  
+  post '/people',        to: 'people#create'
+  delete '/people',      to: 'people#destroy'
 end

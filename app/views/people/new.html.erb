@@ -1,0 +1,92 @@
+<h1>Cadastrar</h1>
+
+<%= form_for(@person, url: people_path) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this @person from being saved:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, 'Nome' %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <br />
+  <div class="field">
+    <%= f.label :sex, 'Sexo' %><br />
+
+    <%= f.label :sex_male, 'Masculino' %>
+    <%= f.radio_button :sex, 'Masculino' %>
+    
+    <%= f.label :sex_female, 'Feminino' %>
+    <%= f.radio_button :sex, 'Feminino' %>
+  </div>
+
+  <br />
+  <div class="field">
+    <%= f.label :age, 'Idade (em anos)' %><br />
+    <%= f.number_field :age, min: 0, max: 200 %>
+  </div>
+
+  <br />
+  <div class="field">
+    <%= f.label :height, 'Altura (em metros)' %><br />
+    <%= f.number_field :height, step: 0.01 %>
+  </div>
+
+  <br />
+  <div class="field">
+    <%= f.label :father, 'Nome do pai' %><br />
+    <%= f.text_field :father %>
+  </div>
+
+  <br />
+  <div class="field">
+    <%= f.label :mother, 'Nome da mãe' %><br />
+    <%= f.text_field :mother %>
+  </div>
+
+  <br />
+  <div class="field">
+    <%= f.label :skin, 'Cor da pele' %><br />
+    <%= f.select :skin, options_for_select(skin_options) %>
+  </div>
+
+  <br />
+  <div class="field">
+    <%= f.label :hair, 'Cor do cabelo' %><br />
+    <%= f.select :hair, options_for_select(hair_options) %>
+  </div>
+
+  <br />
+  <div class="field">
+    <%= f.label :eyes, 'Cor dos olhos' %><br />
+    <%= f.select :eyes, options_for_select(eyes_options) %>
+  </div>
+
+  <br />
+  <div class="field">
+    <%= f.label :specificity, 'Característica física' %><br />
+    <%= f.select :specificity, options_for_select(specificity_options) %>
+  </div>
+
+  <br />
+  <div class="field">
+    <%= f.label :photo, 'Foto' %><br />
+    <%= f.file_field :photo %>
+  </div>
+
+  <br />
+  <div class="actions">
+    <%= f.submit 'Cadastrar' %>
+  </div>
+<% end %>
+
+<%= link_to 'Voltar', root_path %>
