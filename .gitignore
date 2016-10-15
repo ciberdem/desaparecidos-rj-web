@@ -18,3 +18,6 @@
 
 # OSX ds files
 *.DS_Store
+
+# public dir with files
+public/uploads/*
