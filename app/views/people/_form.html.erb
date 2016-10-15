@@ -1,0 +1,102 @@
+<% if person.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+    <ul>
+    <% person.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="field form-group">
+  <%= f.label :name, 'Nome' %><br />
+  <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :photo, 'Foto' %><br />
+  <%= f.file_field :photo, class: 'form-control' %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :sex, 'Sexo' %><br />
+
+  <div class="form-check" style="margin-left: 25px;">
+    <%= f.radio_button :sex, 'Masculino', class: 'form-check-input' %>
+    <%= f.label :sex_male, ' Masculino', class: 'form-check-label' %>
+  </div>
+
+  <div class="form-check" style="margin-left: 25px;">
+    <%= f.radio_button :sex, 'Feminino', class: 'form-check-input' %>
+    <%= f.label :sex_female, ' Feminino', class: 'form-check-label' %>
+  </div>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :age, 'Idade (em anos)' %><br />
+  <%= f.number_field :age, min: 0, max: 200, class: 'form-control' %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :height, 'Altura (em metros)' %><br />
+  <%= f.number_field :height, step: 0.01, class: 'form-control' %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :father, 'Nome do pai' %><br />
+  <%= f.text_field :father, class: 'form-control' %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :mother, 'Nome da mãe' %><br />
+  <%= f.text_field :mother, class: 'form-control' %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :skin, 'Cor da pele' %><br />
+  <%= f.select :skin, options_for_select(skin_options, person.skin), {}, { class: 'form-control' } %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :hair, 'Cor do cabelo' %><br />
+  <%= f.select :hair, options_for_select(hair_options, person.hair), {}, { class: 'form-control' } %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :eyes, 'Cor dos olhos' %><br />
+  <%= f.select :eyes, options_for_select(eyes_options, person.eyes), {}, { class: 'form-control' } %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :specificity, 'Característica física' %><br />
+  <%= f.select :specificity, options_for_select(specificity_options, person.specificity), {}, { class: 'form-control' } %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="actions">
+  <%= f.submit 'Salvar', class: "btn btn-primary btn-lg" %>
+  <%= link_to 'Voltar', :back, class: "btn btn-danger btn-lg" %>
+</div>

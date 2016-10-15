@@ -1,10 +1,25 @@
-<h1>Home</h1>
+<div class="jumbotron" style="margin-top: 50px;">
+  <h1 class="display-3">Registro de Desaparecidos</h1>
 
-<% if user_signed_in? %>
-  <%= current_user.email %>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+  <% if user_signed_in? %>
+    
+    <br />
+    <p class="lead">
+      <%= link_to 'Cadastrar desaparecido', cadastrar_path, class: "btn btn-primary btn-lg" %>
+      <%= link_to 'Buscar desaparecido', root_path, class: "btn btn-primary btn-lg" %>
 
-  <%= link_to 'Cadastrar desaparecido', cadastrar_path %>
-<% else %>
-  <%= render 'login' %>
-<% end %>
+      <br />
+      <br />
+      <%= link_to 'Lista completa de desaparecidos', desaparecidos_path, class: "btn btn-outline-warning" %>
+    </p>
+
+    <hr class="m-y-2">
+    <p class="lead">Usuário logado: <%= current_user.email %></p>
+    <p class="lead"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></p>
+
+  <% else %>
+    
+    <%= render 'login' %>
+  
+  <% end %>
+</div>

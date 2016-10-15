@@ -3,11 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  get  '/falha_login',   to: 'home#failed_login'
-  get  '/cadastrar',     to: 'people#new'
-  get  '/desaparecidos', to: 'people#index'
-  get  '/editar',        to: 'people#edit'      
+  get '/falha_login',   to: 'home#failed_login'
+  get '/cadastrar',     to: 'people#new'
+  get '/desaparecidos', to: 'people#index'
+  get '/editar',        to: 'people#edit'      
   
-  post '/people',        to: 'people#create'
-  delete '/people',      to: 'people#destroy'
+  post '/people',   to: 'people#create'
+  patch '/people',  to: 'people#update'
+  delete '/people', to: 'people#destroy'
 end

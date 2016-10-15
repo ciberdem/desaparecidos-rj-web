@@ -8,11 +8,25 @@ class PeopleController < ApplicationController
   end
 
   def create
-    if person_params.values.all?(&:empty?)
-      redirect_to root_path  
-    else
-      @person = Person.create(person_params)
+    unless person_params.values.all?(&:empty?)
+      Person.create(person_params)
+    end
+
+    redirect_to desaparecidos_path
+  end
+
+  def edit
+    @person = Person.find(params[:id])
+  end
+
+  def update
+    # byebug
+    @person = Person.find(params[:id])
+    
+    if @person.update(person_params)
       redirect_to desaparecidos_path
+    else
+      render 'edit'
     end
   end
 
@@ -21,7 +35,8 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    
+    Person.find(params[:id]).destroy
+    redirect_to desaparecidos_path
   end
 
   private

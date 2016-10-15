@@ -1,11 +1,10 @@
 <div class="jumbotron" style="margin-top: 50px;">
-  <h1 class="display-4">Cadastrar</h1>
-  
+  <h1 class="display-4">Editar</h1>
   <div class="card card-block" style="margin-top: 20px; width: 50%;">
-  
-  <%= form_for(@person, url: people_path) do |f| %>
+
+  <%= form_for(@person, url: people_path(id: @person.id)) do |f| %>
     <%= render 'form', f: f, person: @person %>
   <% end %>
-  
+
   </div>
 </div>

@@ -1,33 +1,17 @@
 module PersonHelper
   def skin_options
-    [
-      '',
-      'Negra',
-      'Branca'
-    ]
+    ['', 'Negra', 'Branca']
   end
 
   def hair_options
-    [
-      '',
-      'Preto',
-      'Loiro'
-    ]
+    ['', 'Preto', 'Loiro']
   end
 
   def eyes_options
-    [
-      '',
-      'Pretos',
-      'Acinzentados'
-    ]
+    ['', 'Pretos', 'Acinzentados']
   end
 
   def specificity_options
-    [
-      '',
-      'Cicatriz',
-      'Tatuagem'
-    ]
+    ['', 'Cicatriz', 'Tatuagem']
   end
 end
