@@ -1,0 +1,28 @@
+<div class="jumbotron container-fluid" style="margin-top: 50px;">
+  <h1 class="display-3">Informações</h1>
+
+  <br />
+  <%= image_tag @person.photo, class: "card-img-top", style: "max-width: 172px; max-height: 175px; float: left;" %>
+
+  <div class="card col-md-6" style="float: left; margin-left: 40px;padding-left: 25px;">
+    <br />
+    <p class="card-text"><b>Nome:</b> <%= @person.name %></p>
+    <p class="card-text"><b>Sexo:</b> <%= @person.sex %></p>
+    <p class="card-text"><b>Idade:</b> <%= @person.age %></p>
+    <p class="card-text"><b>Altura:</b> <%= @person.height %></p>
+    <p class="card-text"><b>Nome do pai:</b> <%= @person.father %></p>
+    <p class="card-text"><b>Nome da mãe:</b> <%= @person.mother %></p>
+    <p class="card-text"><b>Cor da pele:</b> <%= @person.skin %></p>
+    <p class="card-text"><b>Cor do cabelo:</b> <%= @person.hair %></p>
+    <p class="card-text"><b>Cor dos olhos:</b> <%= @person.eyes %></p>
+    <p class="card-text"><b>Característica física:</b> <%= @person.specificity %></p>
+    <br />
+    <%= link_to 'Voltar', :back %> 
+    /
+    <%= link_to 'Editar', { action: :edit, id: @person.id } %>
+    /
+    <%= link_to 'Exlcuir',  { action: :destroy, id: @person.id }, method: :delete, data: { confirm: 'Está certo que deseja excluir esta pessoa?' } %>
+    <br />
+    <br />
+  </div>
+</div>

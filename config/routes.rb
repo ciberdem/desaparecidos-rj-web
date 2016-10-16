@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/cadastrar',     to: 'people#new'
   get '/desaparecidos', to: 'people#index'
   get '/editar',        to: 'people#edit'      
+  get '/info/:id',      to: 'people#show', as: 'info'
   
   post '/people',   to: 'people#create'
   patch '/people',  to: 'people#update'

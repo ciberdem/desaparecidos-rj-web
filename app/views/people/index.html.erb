@@ -5,14 +5,12 @@
   <% @people.each do |person| %>
 
     <div class="card col-md-2" style="padding: 0px; margin: 20px; margin-left: 50px;">
-      <%= image_tag person.photo, class: "card-img-top", style: "max-width: 175px; max-height: 175px;" %>
+      <%= image_tag person.photo, class: "card-img-top", style: "max-width: 172px; max-height: 175px;" %>
       
       <div class="card-block" style="padding: 8px;">
         <h6 class="card-title" style="margin-bottom: 5px;"><%= truncate(person.name, length: 20) %></h6>
         
-        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-        <%= link_to 'Info', '#' %> 
+        <%= link_to 'Info', info_path(person.id) %> 
         /
         <%= link_to 'Editar', { action: :edit, id: person.id } %>
         /
