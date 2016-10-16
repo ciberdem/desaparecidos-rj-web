@@ -7,6 +7,8 @@
   <div class="card col-md-6" style="float: left; margin-left: 40px;padding-left: 25px;">
     <br />
     <p class="card-text"><b>Nome:</b> <%= @person.name %></p>
+    <p class="card-text"><b>Data de desaparecimento:</b> <%= @person.missing_date.strftime("%d/%m/%Y") %></p>
+    <p class="card-text"><b>Local de desaparecimento:</b> <%= @person.place %></p>
     <p class="card-text"><b>Sexo:</b> <%= @person.sex %></p>
     <p class="card-text"><b>Idade:</b> <%= @person.age %></p>
     <p class="card-text"><b>Altura:</b> <%= @person.height %></p>

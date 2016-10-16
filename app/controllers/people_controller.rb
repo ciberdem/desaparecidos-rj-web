@@ -24,7 +24,6 @@ class PeopleController < ApplicationController
   end
 
   def update
-    # byebug
     @person = Person.find(params[:id])
     
     if @person.update(person_params)
@@ -47,7 +46,7 @@ class PeopleController < ApplicationController
 
     def person_params
       params.require(:person).permit(
-        :name, :sex, :age, :height, :father, :mother, :skin, :hair, :eyes, :specificity, :photo
+        :name, :missing_date, :place, :sex, :age, :height, :father, :mother, :skin, :hair, :eyes, :specificity, :photo
       )
     end
 end

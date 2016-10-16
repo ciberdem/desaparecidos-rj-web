@@ -18,6 +18,20 @@
 <hr class="m-y-2">
 
 <div class="field form-group">
+  <%= f.label :missing_date, 'Data de desaparecimento' %><br />
+  <%= f.date_field :missing_date, class: 'form-control' %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
+  <%= f.label :place, 'Local de desaparecimento' %><br />
+  <%= f.text_field :place, class: 'form-control' %>
+</div>
+
+<hr class="m-y-2">
+
+<div class="field form-group">
   <%= f.label :photo, 'Foto' %><br />
   <%= f.file_field :photo, class: 'form-control' %>
 </div>
