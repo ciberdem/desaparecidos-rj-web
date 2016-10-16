@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/desaparecidos', to: 'people#index'
   get '/editar',        to: 'people#edit'      
   get '/info/:id',      to: 'people#show', as: 'info'
+  get '/cartazete/:id', to: 'people#generate_poster', as: 'cartazete'
   
   post '/people',   to: 'people#create'
   patch '/people',  to: 'people#update'

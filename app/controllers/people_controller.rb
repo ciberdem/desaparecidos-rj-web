@@ -42,6 +42,10 @@ class PeopleController < ApplicationController
     redirect_to desaparecidos_path
   end
 
+  def generate_poster
+    
+  end
+
   private
 
     def person_params

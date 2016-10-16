@@ -24,6 +24,8 @@
     <%= link_to 'Editar', { action: :edit, id: @person.id } %>
     /
     <%= link_to 'Exlcuir',  { action: :destroy, id: @person.id }, method: :delete, data: { confirm: 'Está certo que deseja excluir esta pessoa?' } %>
+    /
+    <%= link_to 'Gerar cartazete', cartazete_path(@person.id) %>
     <br />
     <br />
   </div>
