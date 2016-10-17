@@ -34,7 +34,12 @@ class PeopleController < ApplicationController
   end
 
   def search
-    
+    @person = Person.new
+  end
+
+  def filter
+    @people = Person.search(person_params)
+    render 'index'
   end
 
   def destroy

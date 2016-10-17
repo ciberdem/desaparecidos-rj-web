@@ -7,10 +7,12 @@ Rails.application.routes.draw do
   get '/cadastrar',     to: 'people#new'
   get '/desaparecidos', to: 'people#index'
   get '/editar',        to: 'people#edit'      
+  get '/buscar',        to: 'people#search'
   get '/info/:id',      to: 'people#show', as: 'info'
   get '/cartazete/:id', to: 'people#generate_poster', as: 'cartazete'
   
   post '/people',   to: 'people#create'
+  post '/filter',   to: 'people#filter'
   patch '/people',  to: 'people#update'
   delete '/people', to: 'people#destroy'
 end

@@ -1,15 +1,3 @@
-<% if person.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(person.errors.count, "error") %> prohibited this person from being saved:</h2>
-
-    <ul>
-    <% person.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
 <div class="field form-group">
   <%= f.label :name, 'Nome' %><br />
   <%= f.text_field :name, autofocus: true, class: 'form-control' %>
@@ -43,12 +31,12 @@
 
   <div class="form-check" style="margin-left: 25px;">
     <%= f.radio_button :sex, 'Masculino', class: 'form-check-input' %>
-    <%= f.label :sex_male, ' Masculino', class: 'form-check-label' %>
+    <%= f.label :sex, ' Masculino', class: 'form-check-label' %>
   </div>
 
   <div class="form-check" style="margin-left: 25px;">
     <%= f.radio_button :sex, 'Feminino', class: 'form-check-input' %>
-    <%= f.label :sex_female, ' Feminino', class: 'form-check-label' %>
+    <%= f.label :sex, ' Feminino', class: 'form-check-label' %>
   </div>
 </div>
 
@@ -63,7 +51,7 @@
 
 <div class="field form-group">
   <%= f.label :height, 'Altura (em metros)' %><br />
-  <%= f.number_field :height, step: 0.01, class: 'form-control' %>
+  <%= f.select :height, options_for_select(height_options), {}, { class: 'form-control' } %>
 </div>
 
 <hr class="m-y-2">

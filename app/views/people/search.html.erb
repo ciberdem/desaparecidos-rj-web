@@ -1,0 +1,96 @@
+<div class="jumbotron" style="margin-top: 50px;">
+  <h1 class="display-4">Buscar</h1>
+  
+  <div class="card card-block" style="margin-top: 20px; width: 50%;">
+  
+  <%= form_for(@person, url: filter_path) do |f| %>
+
+    <div class="field form-group">
+      <%= f.label :name, 'Nome' %><br />
+      <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+    </div>
+
+    <hr class="m-y-2">
+
+    <%= f.hidden_field :sex %>
+    <div class="field form-group">
+      <%= f.label :sex, 'Sexo' %><br />
+
+      <div class="form-check" style="margin-left: 25px;">
+        <%= f.radio_button :sex, 'Masculino', class: 'form-check-input' %>
+        <%= f.label :sex, ' Masculino', class: 'form-check-label' %>
+      </div>
+
+      <div class="form-check" style="margin-left: 25px;">
+        <%= f.radio_button :sex, 'Feminino', class: 'form-check-input' %>
+        <%= f.label :sex, ' Feminino', class: 'form-check-label' %>
+      </div>
+    </div>
+
+    <hr class="m-y-2">
+
+    <div class="field form-group">
+      <%= f.label :age, 'Idade aparente' %><br />
+      <%= f.select :age, options_for_select(age_options), {}, { class: 'form-control' } %>
+    </div>
+
+    <hr class="m-y-2">
+
+    <div class="field form-group">
+      <%= f.label :height, 'Altura (em metros)' %><br />
+      <%= f.select :height, options_for_select(height_options), {}, { class: 'form-control' } %>
+    </div>
+
+    <hr class="m-y-2">
+
+    <div class="field form-group">
+      <%= f.label :father, 'Nome do pai' %><br />
+      <%= f.text_field :father, class: 'form-control' %>
+    </div>
+
+    <hr class="m-y-2">
+
+    <div class="field form-group">
+      <%= f.label :mother, 'Nome da mãe' %><br />
+      <%= f.text_field :mother, class: 'form-control' %>
+    </div>
+
+    <hr class="m-y-2">
+
+    <div class="field form-group">
+      <%= f.label :skin, 'Cor da pele' %><br />
+      <%= f.select :skin, options_for_select(skin_options), {}, { class: 'form-control' } %>
+    </div>
+
+    <hr class="m-y-2">
+
+    <div class="field form-group">
+      <%= f.label :hair, 'Cor do cabelo' %><br />
+      <%= f.select :hair, options_for_select(hair_options), {}, { class: 'form-control' } %>
+    </div>
+
+    <hr class="m-y-2">
+
+    <div class="field form-group">
+      <%= f.label :eyes, 'Cor dos olhos' %><br />
+      <%= f.select :eyes, options_for_select(eyes_options), {}, { class: 'form-control' } %>
+    </div>
+
+    <hr class="m-y-2">
+
+    <div class="field form-group">
+      <%= f.label :specificity, 'Característica física' %><br />
+      <%= f.select :specificity, options_for_select(specificity_options), {}, { class: 'form-control' } %>
+    </div>
+
+    <hr class="m-y-2">
+
+    <div class="actions">
+      <%= f.submit 'Buscar', class: "btn btn-primary btn-lg" %>
+      <%= link_to 'Voltar', :back, class: "btn btn-danger btn-lg" %>
+    </div>
+
+  <% end %>
+  
+  </div>
+</div>

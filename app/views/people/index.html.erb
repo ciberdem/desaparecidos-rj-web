@@ -2,6 +2,12 @@
   <h1 class="display-3">Desaparecidos</h1>
   <br />
 
+  <% if @people.empty? %>
+    <div class="card col-md-6" style="padding: 20px;">
+      <p class="lead">Não foram encotrados registros no banco de dados.</p>
+    </div>
+  <% end %>
+
   <% @people.each do |person| %>
 
     <div class="card col-md-2" style="padding: 0px; margin: 20px; margin-left: 50px;">
