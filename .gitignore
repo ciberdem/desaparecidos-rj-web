@@ -21,3 +21,6 @@
 
 # public dir with files
 public/uploads/*
+
+# Env variables
+tokens.env
