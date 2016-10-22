@@ -6,7 +6,10 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+#gem 'puma', '~> 3.0'
+
+gem 'unicorn', '~> 5.1.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,7 +41,11 @@ gem 'mini_magick', '~> 4.5.1'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 
 # Authentication
-gem 'devise', '~> 4.2.0'
+gem 'devise', '~> 4.2.0'#, :require => 'dotenv/rails-now'
+
+# Env variables files
+gem 'dotenv-rails', '~> 2.1.1'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

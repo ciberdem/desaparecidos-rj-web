@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: missing-people_production
-  username: missing-people
-  password: <%= ENV['MISSING-PEOPLE_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>

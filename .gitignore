@@ -23,4 +23,7 @@
 public/uploads/*
 
 # Env variables
-tokens.env
+.env
+
+# Server files
+/shared/* 
